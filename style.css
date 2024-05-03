@@ -396,7 +396,6 @@ a{
     width: 95%;
     margin-top: 1.5em;
     font-weight: 200;
-    margin-bottom: 2em;
 }
 
 
@@ -414,6 +413,7 @@ a{
     position: absolute;
     top: 22em;
     border: 1px solid #fff;
+    margin-top: 1em;
 }
 
 /* SECTION FIVE STYLING */
