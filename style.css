@@ -265,6 +265,12 @@ a{
     width: 60%;
 }
 
+.contact--btn  > a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
 
 .arrows{
     height: 28px;
@@ -304,6 +310,8 @@ a{
     height: 50px;
     width: 52px;
 }
+
+
 
 /* SECTION THREE STYLING */
 .section-three{
