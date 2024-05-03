@@ -621,10 +621,17 @@ a{
 
 .location{
     width: 316px;
-    height: 529px;
+    height: 600px;
     background: #161616;
+    background-position: center center;
     border: 1px solid #FFFFFF;
     border-radius: 61px;
+    overflow: hidden;
+}
+
+.location > video{
+    width: 100%;
+    background-position: center center;
 }
 
 /* FOOTER STYLING */
