@@ -22,6 +22,11 @@ html,body{
     src: url('./assets/fonts/KyivTypeSerif-VarGX.ttf');
 }
 
+@font-face {
+    font-family: Scream;
+    src: url('./assets/fonts/good-times/good\ times\ rg.otf');
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 15px;
@@ -46,7 +51,6 @@ html,body{
   .container{
     max-width: 370px;
     margin: 0 auto;
-    border: 2px solid #fff;
   }
 
 
@@ -57,6 +61,22 @@ html,body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 1px 1px 20px  rgb(36, 19, 54);
+    background: url('./assets/bg-dark.gif');
+    background-size: cover;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-bottom: 0.5em;
+    width: 100%;
+    z-index: 100;
+}
+
+.left,
+.right{
+    display: none;
 }
 
 .header > img{
@@ -66,13 +86,18 @@ html,body{
     margin-right: 8em;
 }
 
-.header > button{
+.header--btn{
     cursor: pointer;
     border-radius: 5px;
     border: none;
     width: 12%;
     height: 33px;
 }
+
+a{
+    cursor: pointer;
+}
+
 
 /* SECTION ONE STYLING */
 
@@ -85,14 +110,17 @@ html,body{
     height: 520px;
     color: #fff;
     position: relative;
+    margin-top: 6em;
 }
 
 .section-one > h1{
-    font-family: adero , sans-serif;
+    font-family: Scream;
+    letter-spacing: 2px;
     font-size: 1.75rem;
     font-weight: 1000;
     margin: 0;
     padding-top: 1em;
+    text-shadow: 2px 2px 100px saddlebrown;
 }
 
 .wrench{
@@ -107,21 +135,21 @@ html,body{
     position: absolute;
     z-index: 10;
     top: 3.5em;
-    left: 1em;
+    left: 0.5em;
 }
 
 .h-two{
     position: absolute;
     z-index: 10;
     top: 5.5em;
-    left: 2.5em;
+    left: 1.5em;
 }
 
 .h-three{
     position: absolute;
     z-index: 10;
     top: 7.5em;
-    left: 4.5em;
+    left: 3em;
 }
 
 
@@ -148,6 +176,13 @@ html,body{
 }
 
 /* SECTION TWO STYLING */
+
+.section-two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .box{
     display: flex;
@@ -239,7 +274,7 @@ html,body{
     padding-bottom: 2em;
 }
 
-.section-three > h1{
+.three-one > h1{
     font-family: "Oxanium", sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -247,17 +282,16 @@ html,body{
     margin-top: 1em;
 }
 
-.section-three > h2{
+.three-one > h2{
     font-family: "Sarabun", sans-serif;
     font-weight: 200;
     font-size: 1rem;
     margin-bottom: 2.5em;
 }
 
-.section-three > h3{
-    font-family: Helvetica-Bold;
-    font-weight: 1000;
-    letter-spacing: 3.25px;
+.three-two > h3{
+    font-family: "Oxanium", sans-serif;
+    font-weight: 700;
     font-size: 2rem;
     margin: 0.5em 0 0.5em 0;
 }
@@ -317,7 +351,7 @@ html,body{
 
 
 .sub-two{
-    background: url('./assets/photo-1523741543316-beb7fc7023d8.avif');
+    background: url('./assets/staff/combined.jpg');
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -470,12 +504,20 @@ html,body{
     background-size: cover;
 }
 
+.sub-section-two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 /* SECTION SIX STYLING */
 .section-six{
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
+    background-color: #121212;
     margin-top: 1em;
 }
 
@@ -506,7 +548,29 @@ html,body{
 .img-staff-one{
     width: 75%;
     height: 304px;
-    background: #D9D9D9;
+    background: url('./assets/staff/owner.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 44px;
+    margin-top: 0.5em;
+}
+
+.img-staff-two{
+    width: 75%;
+    height: 304px;
+    background: url('./assets/staff/manager.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 44px;
+    margin-top: 0.5em;
+}
+
+.img-staff-three{
+    width: 75%;
+    height: 304px;
+    background: url('./assets/staff/manager-two.png');
+    background-size: cover;
+    background-position: center;
     border-radius: 44px;
     margin-top: 0.5em;
 }
@@ -568,22 +632,28 @@ html,body{
 .footer{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    background: url('./assets/car-backfire.gif');
+    background-size: cover;
     color: #fff;
-    text-align: start;
     background-color: #555;
+    margin-top: 2em;
 }
 
 .footer > h1{
     font-family: "Oxanium", sans-serif;
     font-weight: 700;
     font-size: 2rem;
+    margin: 1em 0 1em 1em;
+    text-shadow: 5px 5px 10px red;
 }
 
 
 .footer > h2{
     font-family: "Oxanium", sans-serif;
     font-weight: 700;
+    margin: 0 0 1em 1em;
+    text-shadow: 5px 5px 10px red;
     font-size: 1.5rem;
 }
 
@@ -591,4 +661,451 @@ html,body{
     font-family: "Sarabun", sans-serif;
     font-weight: 200;
     font-size: 1.25rem;
+    margin: 0 auto;
+}
+
+.footer{
+    background-position: center;
+    border-radius: 1em;
+}
+
+
+@media (min-width:376px) {
+    .container{
+        max-width: 425px;
+    }
+
+    .header > img{
+        width: 25%;
+    }
+
+    .section-one{
+        width: 100%;
+        height: 80vh;
+    }
+
+    .section-two,
+    .section-three,
+    .section-five,
+    .section-six{
+        max-width: 370px;
+        margin: 0 auto;
+    }
+
+    .section-four{
+        width: 78%;
+    }
+
+    .sub-one > h1{
+        margin-top: 0.25em;
+    }
+
+    .location{
+        width: 92%;
+    }
+
+    .location > h2{
+        font-size: 1.5rem;
+    }
+
+    @media (min-width:500px) {
+        .container{
+            max-width: 425px;
+        }
+
+        .header{
+            max-width: 425px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .footer{
+            background-position: center;
+            border-radius: 1em;
+        }
+    }
+
+    @media (min-width:1023px) {
+        .container{
+           max-width: 1024px;
+        }
+
+        .header{
+            max-width: 1024px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .header > img{
+            width: 15%;
+            height: 140px;
+        }
+        
+        .left,
+        .right{
+            display: flex;
+            flex-direction: row;
+            font-family: "Oxanium", sans-serif;
+            font-weight: 200;
+        }
+
+        .right{
+            width: 40%;
+        }
+        .left{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .left > button{
+            padding: 1em;
+            border-radius: 2em;
+            font-family: "Oxanium", sans-serif;
+            font-weight: 200;
+            width: 60%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #808080;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .left > a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .left,
+        .right{
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .right > ul{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+
+        .header > img{
+            margin: 0 auto;
+            margin-left: 140px;
+        }
+
+
+
+        .header--btn{
+            display: none;
+        }
+
+        .section-one{
+	        background-size: contain;
+            width: 100%;
+            height: 800px;
+        }
+
+        .wrench{
+            height: 500px;
+            width: 50%;
+        }
+
+        .section-one > h1{
+            font-size: 2.75rem;
+        }
+
+        .h-one{
+            position: absolute;
+            z-index: 10;
+            top: 3.5em;
+            left: 4em;
+        }
+        
+        .h-two{
+            position: absolute;
+            z-index: 10;
+            top: 5.5em;
+            left: 6em;
+        }
+        
+        .h-three{
+            position: absolute;
+            z-index: 10;
+            top: 7.5em;
+            left: 8em;
+        }
+        
+        .section-two{
+            max-width: 1000px;
+            flex-direction: row;
+            margin-top: -2.5em;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .box{
+            margin-top: 1.5em;
+            margin-left: 1em;
+        }
+
+        .section-three{
+            max-width: 940px;
+            flex-direction: row;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            width: 100%;
+        }
+
+        .three-one{
+            width: 35%;
+            margin-right: 2em;
+        }
+
+        .three-one > h1{
+            font-size: 2.5rem;
+        }
+
+        .three-one > h2{
+            font-size: 1.25rem;
+        }
+
+        .three-two{
+            width: 60%;
+        }
+
+        .three-two > h3{
+            font-size: 2.75rem;
+        }
+
+        /* SECTION FOUR STYLING */
+
+        .section-four{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 2.5em;
+            width: 92%;
+            border-radius: 1.25em;
+            position: relative;
+            margin-top: 2em;
+        }
+
+        .sub-one{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1.25em;
+            padding: 2em;
+            width: 100%;
+            margin-right: -2em;
+            height: 440px;
+        }
+
+
+        .sub-one > h1{
+            font-family: Helvetica-Bold,sans-serif;
+            font-weight: 400;
+            font-size: 2.75rem;
+            text-transform: uppercase;
+            width: 70%;
+            letter-spacing: 2px;
+            margin: 1em 0 1em 0;
+        }
+
+        .sub-one > h2{
+            font-family: Helvetica-Bold,sans-serif;
+            font-weight: 400;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            margin-top: -0.75em;
+        }
+
+        .sub-one > p{
+            font-family: Kyiv Type;
+            font-size: 1rem;
+            width: 95%;
+            margin-top: 1.75em;
+            font-weight: 200;
+        }
+
+
+        .sub-two{
+            height: 440px;
+            width: 100%;
+            border-radius: 1.25em;
+            padding: 2em;
+            position: relative;
+            top: 0;
+        }
+
+        /* SECTION FIVE STYLING */
+        .section-five{
+            max-width: 1000px;
+        }
+
+        .section-five > h1{
+            font-size: 2.75rem;
+        }
+        
+        .sub-section-one{
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .one{
+            flex-direction: column;
+            align-items: center;
+            margin-top: 0;
+        }
+
+
+        .circle-one,
+        .circle-two,
+        .circle-three{
+            height: 150px;
+            width: 46%;
+        }
+
+
+        .circle-one{
+            margin-top: 1.25em;
+        }
+
+        .sub-five{
+            width: 60%;
+        }
+        
+        .sub-five > h1{
+            font-size: 1.5rem;
+        }
+        
+        .sub-five > h2{
+            font-size: 1.125rem;
+        }
+
+        .sub-section-two{
+            max-width: 1024px;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .box-service{
+            margin-left: 1em;
+        }
+
+        /* SECTION SIX STYLING */
+        .section-six{
+            max-width: 1024px;
+            margin-top: 3em;
+            margin-bottom: 1em;
+            padding: 2em 0 2em 0;
+        }
+
+        .section-six > h1{
+            font-size: 2.75rem;
+        }
+
+        .staff{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .staff-one > h1{
+            margin-bottom: 0.25em;
+        }
+
+        .staff-two,
+        .staff-three{
+            margin-top: -1.25em;
+        }
+
+        /* SECTION SEVEN STYLING */
+        .section-seven > h1{
+            font-size: 2.75rem;
+        }
+
+        .section-seven > h2{
+            font-size: 1.75rem;
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width:1439px) {
+    .header{
+        max-width: 1440px;
+    }
+
+    .header > img{
+        width: 11%;
+        margin: 0 auto;
+        margin-left: 80px;
+    }
+
+    .left > button{
+        width:45%;
+    }
+
+    .left{
+        margin-left: 5em;
+    }
+
+
+    .container{
+        max-width: 1440px;
+    }
+
+    .section-one{
+        background-size: contain;
+        width: 100%;
+        height: 800px;
+    }
+
+    .wrench{
+        height: 575px;
+        width: 45%;
+    }
+
+    .section-one > h1{
+        font-size: 3rem;
+    }
+
+    .section-two,
+    .section-three{
+        max-width: 1240px;
+    }
+
+    .section-four{
+        max-width: 1024px;
+    }
+
+    .section-six{
+        justify-content: center;
+        max-width: 1240px;
+        width: 100%;
+        height: 700px;
+    }
+
+    .footer{
+        background-position: center;
+        border-radius: 1em;
+    }
 }
